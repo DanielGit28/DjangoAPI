@@ -6,3 +6,7 @@ class Programmer(models.Model):
     nickName = models.CharField(max_length=50)
     age = models.PositiveSmallIntegerField(max_length=2)
     is_active = models.BooleanField(default=True)
+
+class React(models.Model):
+    employee = models.CharField(max_length=30)
+    department = models.CharField(max_length=200)

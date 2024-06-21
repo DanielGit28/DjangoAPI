@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'coreapi',
+    'corsheaders',
     'api'
 ]
 
@@ -50,7 +51,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'coresheader.middleware.CorsMiddleware',
 ]
+
+
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permission.AllowAny'
+]}
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'drf.urls'
 
